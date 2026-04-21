@@ -1,5 +1,3 @@
-import * as dotenv from 'dotenv';
-
 import { Injectable } from '@nestjs/common'
 import { PrismaClient } from 'generated/prisma/client'
 import { PrismaPg } from '@prisma/adapter-pg'
@@ -11,6 +9,5 @@ export class PrismaService extends PrismaClient {
       connectionString: process.env.DATABASE_URL as string,
     });
     super({ adapter })
-    console.log('DB URL:', process.env.DATABASE_URL);
   }
 }
