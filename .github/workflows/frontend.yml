@@ -37,6 +37,7 @@ jobs:
         with:
           node-version: 22.20.0
           cache: 'pnpm'
+          cache-dependency-path: './frontend/'
 
       # Runs a set of commands using the runners shell
       - name: Install dependencies
