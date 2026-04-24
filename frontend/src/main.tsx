@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 
 const router = createBrowserRouter([
   { path: '/', element: <App /> },
-  { path: '/dashboard', element: <Dashboard /> },
+  // { path: '/dashboard', element: <Dashboard /> },
 ]);
 
 createRoot(document.getElementById('root')!).render(
