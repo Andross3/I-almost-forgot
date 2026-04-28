@@ -1,4 +1,8 @@
-import { HttpStatus, Injectable, InternalServerErrorException } from '@nestjs/common';
+import {
+  HttpStatus,
+  Injectable,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateBirthdayDto } from './dto/create-birthday.dto';
 import { BadRequestException, NotFoundException } from '@nestjs/common';
@@ -28,8 +32,14 @@ export class BirthdayPersonService {
   // crear cumpleanos
   async createBirthdayPerson(data: CreateBirthdayDto) {
     try {
+      const [year, month, day] = data.birthday_date.split('-');
+      const parsedDate = new Date(Number(year), Number(month) - 1, Number(day));
+
       const birthday = await this.prisma.birthday_person.create({
-        data,
+        data: {
+          ...data,
+          birthday_date: parsedDate
+        },
       });
       return {
         message: 'Cumpleaños creado exitosamente',
@@ -42,7 +52,6 @@ export class BirthdayPersonService {
 
   // eliminar cumpleanos
   async deleteBirthdayPerson(id: string) {
-
     await this.findBirthdayOrFail(id)
 
     try {

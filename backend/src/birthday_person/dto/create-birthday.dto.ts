@@ -8,7 +8,7 @@ export class CreateBirthdayDto {
 
   @IsDateString()
   @IsNotEmpty()
-  birthday_date: Date;
+  birthday_date: string;
 
   @IsEnum(SocialCircle)
   @IsNotEmpty()
