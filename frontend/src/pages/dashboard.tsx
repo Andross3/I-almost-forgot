@@ -1,4 +1,5 @@
 import { Card, CardTitle } from '../components/ui/card'
+import { FormBirthday } from '@/components/birthday/BirthdayForm';
 
 function Dashboard() {
   return (
@@ -35,6 +36,7 @@ function Dashboard() {
 
         </Card>
       </div>
+      <FormBirthday />
     </div>
   )
 }
