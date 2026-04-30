@@ -10,7 +10,7 @@ function Dashboard() {
       </div>
 
       <div className='grid grid-cols-2 gap-1'>
-        <Card className='bg-purple-400'>
+        <Card className='bg-green-400'>
           <CardTitle>
             Cumpleaños de hoy
           </CardTitle>
